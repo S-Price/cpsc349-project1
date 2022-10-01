@@ -1,16 +1,16 @@
 ---
-layout: base
+layout: layout
 title: Home
 ---
-<header>
-    <h1>{{ title }} </h1>
-</header>
 
-<footer>
-    <hr>
-    <p>
-        <small>
-            <a href="https://www.pexels.com">Photos provided by Pexels</a>
-        </small>
-    </p>
-</footer>
+
+<h2> A collection photos taken at night time</h2>
+<br></br>
+<h5> Click on images for photographer name</h5>
+
+
+{% for photo in night.media %}
+<a href="/photos/{{ photo.id }}">
+    <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+</a>
+{% endfor %}

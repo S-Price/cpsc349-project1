@@ -1,0 +1,14 @@
+---
+layout: layout
+pagination:
+    data: night.media
+    size: 1
+    alias: photo
+eleventyComputed:
+    permalink: "/photos/{{ photo.id }}/"
+    title: "{{ photo.alt }}"
+---
+
+
+<img src="{{ photo.src.large }}" alt="{{ photo.alt }}" />
+<h4>Photographer: {{ photo.photographer }} </h4>
