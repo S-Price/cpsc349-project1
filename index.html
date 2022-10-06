@@ -8,9 +8,12 @@ title: Home
 <br></br>
 <h5> Click on images for photographer name</h5>
 
-
-{% for photo in night.media %}
-<a href="/photos/{{ photo.id }}">
-    <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
-</a>
-{% endfor %}
+<section
+    {% for photo in night.media %}
+    <a href="/photos/{{ photo.id }}">
+        <aside>
+            <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+        </aside>
+    </a>
+    {% endfor %}
+</section>
