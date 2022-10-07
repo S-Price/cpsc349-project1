@@ -8,12 +8,12 @@ title: Welcome To View Night Time Photos
 <br></br>
 <h3> Once you click on any of the photos they will provide you more detail of the photographer on a new page</h3>
 
-<section
+<section>
     {% for photo in night.media %}
-    <a href="/cpsc349-project1/photos/{{ photo.id }}">
-        <aside>
-            <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
-        </aside>
-    </a>
+    <aside>
+        <a href="/cpsc349-project1/photos/{{ photo.id }}">
+                <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+        </a>
+    </aside>
     {% endfor %}
 </section>
