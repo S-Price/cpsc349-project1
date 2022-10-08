@@ -1,6 +1,10 @@
 ---
 layout: layout
 title: Welcome To View Night Time Photos
+
+pagination:
+  data: night.media
+  size: 9
 ---
 
 
@@ -9,11 +13,18 @@ title: Welcome To View Night Time Photos
 <h3> Once you click on any of the photos they will provide you more detail of the photographer on a new page</h3>
 
 <section>
-    {% for photo in night.media %}
+    {% for photo in pagination.items %}
     <aside>
         <a href="/cpsc349-project1/photos/{{ photo.id }}">
-                <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}" />
+                <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}"/>
         </a>
     </aside>
     {% endfor %}
+    <p>Page {{pagination.pageNumber}}</p>
+    {% if pagination.href.previous %}
+    <a href="/cpsc349-project1{{ pagination.href.previous }}">Previous</a> 
+    <br></br>
+    {% else %} Previous {% endif %} {% if pagination.href.next %}
+    <a href="/cpsc349-project1{{ pagination.href.next }}">Next</a>
+    {% else %} Next {% endif %}
 </section>
