@@ -5,8 +5,6 @@ title: Welcome To View Night Time Photos
 pagination:
   data: night.media
   size: 6
-eleventyComputed:
-  title: "Page {{pagination.pageNumber}}"
 ---
 
 
@@ -22,10 +20,11 @@ eleventyComputed:
         </a>
     </aside>
     {% endfor %}
-
+    <p>Page {{pagination.pageNumber}}</p>
     {% if pagination.href.previous %}
     <a href="/cpsc349-project1{{ pagination.href.previous }}">Previous</a>
     {% else %} Previous {% endif %} {% if pagination.href.next %}
+    <br></br>
     <a href="/cpsc349-project1{{ pagination.href.next }}">Next</a>
     {% else %} Next {% endif %}
 </section>
