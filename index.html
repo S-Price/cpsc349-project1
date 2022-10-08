@@ -21,10 +21,11 @@ eleventyComputed:
                 <img src="{{ photo.src.tiny }}" alt="{{ photo.alt }}"/>
         </a>
     </aside>
-    
     {% endfor %}
+
     {% if pagination.href.previous %}
     <a href="/cpsc349-project1{{ pagination.href.previous }}">Previous</a>
     {% else %} Previous {% endif %} {% if pagination.href.next %}
     <a href="/cpsc349-project1{{ pagination.href.next }}">Next</a>
+    {% else %} Next {% endif %}
 </section>
